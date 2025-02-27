@@ -12,6 +12,6 @@
 ##### ADD 2, CX
 ##### register should be written first
 ##### ADD 3, 6
-##### there should be a destination for the qddition answer
+##### there should be a destination for the addition answer
 ##### INC AX, 2
 ##### inc only takes on operand
