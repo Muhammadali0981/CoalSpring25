@@ -1,4 +1,4 @@
-# Lab 06
+# Lab 04
 ### Q1
 #### What errors are present in the following?
 ##### MOV AX 3d
@@ -15,3 +15,4 @@
 ##### there should be a destination for the addition answer
 ##### INC AX, 2
 ##### inc only takes on operand
+### Q2
