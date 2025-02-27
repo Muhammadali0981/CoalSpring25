@@ -16,3 +16,21 @@
 ##### INC AX, 2
 ##### inc only takes on operand
 ### Q2
+```asm
+INCLUDE irvine32.inc
+.data
+	myname DWORD 41h, 4ch, 49h ;A = 41 L = 4c I = 49
+
+.code
+main PROC
+
+	mov eax, myname[0]
+	mov ebx, myname[4]
+	mov ecx, myname[8]
+	call DumpRegs
+
+exit
+main ENDP
+END main
+```
+![image](https://github.com/user-attachments/assets/b237ca2f-5bea-49c1-9b7e-26ada32c6272)
