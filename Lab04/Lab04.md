@@ -1,7 +1,7 @@
 # Lab 03
 ### Q1
-What errors are present in the following?
-MOV AX 3d
+What errors are present in the following?\
+MOV AX 3d\
 
 MOV 23, AX
 MOV CX, CH
