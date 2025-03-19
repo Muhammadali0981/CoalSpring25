@@ -116,3 +116,34 @@ main endp
 end main
 ```
 ![image](https://github.com/user-attachments/assets/b46845c7-43a8-4106-85fc-4956bd50ad3c)
+## Q2 part iv
+```asm 
+include irvine32.inc
+.data
+	a DWORD 4
+	
+.code
+main proc
+	mov ecx, 4
+	mov eax, 1
+	
+	L2:
+		mov ebx, ecx
+		mov ecx, a
+		
+		L1: 
+			call writedec
+			inc eax
+		loop L1
+		
+		call crlf
+		dec a
+		mov eax, 1
+		mov ecx, ebx
+	loop L2
+
+	exit
+main endp
+end main
+```
+![image](https://github.com/user-attachments/assets/de8c33c9-2acd-478a-a420-a41d8dec015a)
