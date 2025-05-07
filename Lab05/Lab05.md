@@ -42,8 +42,9 @@ main proc
 main endp
 end main
 ```
+![image](https://github.com/user-attachments/assets/3cebe2ef-3dfb-437f-98bf-b2749c4a5fe9)
 
-## Q4 
+## Q2
 ```asm
 include irvine32.inc
 .data
@@ -83,3 +84,4 @@ exit
 main endp
 end main
 ```
+![image](https://github.com/user-attachments/assets/df9f73a0-282a-4b1c-9009-022b179b0279)
