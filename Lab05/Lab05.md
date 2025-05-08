@@ -123,3 +123,37 @@ main endp
 end main
 ```
 ![image](https://github.com/user-attachments/assets/e3d3a3b4-e5a0-4fa4-8d54-937f95f549f1)
+
+## Q4
+```asm
+include irvine32.inc
+
+.data
+	array1 DWORD 10, 20, 30, 40, 50
+	
+	 
+.code
+main PROC
+	mov edi, 0
+	mov ecx, lengthof array1
+
+l1:
+	sub array1[edi * 4], 5
+	inc edi	
+	loop l1
+	
+	mov ecx, lengthof array1
+	mov edi, 0
+
+print:
+	mov eax, 0
+	mov eax, array1[edi * 4]
+	call crlf
+	call writeint
+	inc edi
+	loop print
+
+exit
+main endp
+end main
+```
