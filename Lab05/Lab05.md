@@ -1,4 +1,4 @@
-## Q1
+![image](https://github.com/user-attachments/assets/26ece733-f5f3-4a0e-b798-3f48d26fe92c)## Q1
 ```asm
 include irvine32.inc
 
@@ -157,3 +157,37 @@ exit
 main endp
 end main
 ```
+![image](https://github.com/user-attachments/assets/e2694cd3-6c0e-49fb-bd6f-b011b51b621f)
+
+## Q5
+```asm
+INCLUDE Irvine32.inc
+
+.data
+	arrayB BYTE 60, 70, 80
+	arrayW WORD 150, 250, 350
+	arrayD DWORD 600, 1200, 1800
+.code
+main proc
+	mov esi, lengthof arrayB - 1
+	movzx eax, arrayB[esi * type arrayB]
+	add al, arrayB[0]
+	call writedec
+	call crlf
+
+	mov esi, lengthof arrayW - 1
+	movzx eax, arrayW[esi * type arrayW]
+	add ax, arrayW[0]
+	call writedec
+	call crlf
+
+	mov esi, lengthof arrayD - 1
+	mov eax, arrayD[esi * type arrayD]
+	add eax, arrayD[0]
+	call writedec
+
+	exit
+main endp
+end main
+```
+![image](https://github.com/user-attachments/assets/b3b3d79b-8b70-4b27-a92f-f2d0f2e01440)
