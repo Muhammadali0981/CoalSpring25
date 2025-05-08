@@ -1,4 +1,4 @@
-![image](https://github.com/user-attachments/assets/26ece733-f5f3-4a0e-b798-3f48d26fe92c)## Q1
+## Q1
 ```asm
 include irvine32.inc
 
