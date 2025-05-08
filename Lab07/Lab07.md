@@ -1,4 +1,4 @@
-## Q1
+![image](https://github.com/user-attachments/assets/a91e9002-aa46-49c4-9937-b3b4381c0d42)## Q1
 ```asm
 INCLUDE irvine32.inc
 
@@ -168,5 +168,122 @@ main proc
 main endp
 end main
 ```
+## Q4
+```asm
+INCLUDE Irvine32.inc
 
+.data
+	source BYTE "Hello", 0
+	target BYTE lengthof source - 1 dup(?), 0
+
+
+.code
+main Proc
+	
+	mov esi, 0
+	mov ecx, lengthof source 
+
+
+copy:
+	mov al, source[esi]
+	mov target[esi], al
+	inc esi
+	loop copy
+	
+	mov edx, offset target
+	call writestring
+
+
+	exit
+main endp
+end main
+```
+![image](https://github.com/user-attachments/assets/81231090-6bc3-4395-ab9d-db4479e4461c)
+
+## Q5
+```asm
+INCLUDE Irvine32.inc
+
+.data
+	arr DWORD 1, 2, 3, 4, 5
+
+.code
+main proc
+	
+	mov esi, 0
+	mov ecx, lengthof arr/2
+	mov edi, lengthof arr - 1
+
+
+rev:
+	mov eax, arr[esi * type arr]
+	xchg eax, arr[edi * type arr]
+	mov arr[esi * type arr], eax
+	inc esi
+	dec edi
+	loop rev
+
+	mov ecx, lengthof arr
+	mov edi, 0
+
+print:
+	mov eax, arr[edi * type arr]
+	call writedec
+	call crlf
+	inc edi
+	loop print
+
+	exit
+main endp
+end main
+```
+![image](https://github.com/user-attachments/assets/e946bbf7-5b8d-47e3-b358-a7492f285c00)
+
+## Q6
+```asm
+INCLUDE Irvine32.inc
+
+.data
+	arr dword 8, 5, 1, 2, 6
+	count dword ?
+.code
+main proc
+	mov ecx, lengthof arr - 1
+
+	outer:
+		mov count, ecx
+		mov ecx, lengthof arr - 1
+		mov esi, 1
+		mov edi, 0
+		inner:
+			mov eax, arr[esi * type arr]
+			cmp eax, arr[edi * type arr]
+			jge no_swap
+
+			xchg eax, arr[edi * type arr]
+			mov arr[esi * type arr], eax
+		no_swap:
+			inc esi
+			inc edi
+			loop inner
+
+		mov ecx, count
+		loop outer
+
+	mov ecx, lengthof arr
+	mov esi, 0
+	print:
+		mov eax, arr[esi * type arr]
+		call writedec
+		mov eax, 32
+		call writechar
+		inc esi
+		loop print
+		
+	
+	exit
+main endp
+end main
+```
+![image](https://github.com/user-attachments/assets/e6ca667d-85ec-4cb7-ac20-35b35de5ef06)
 
